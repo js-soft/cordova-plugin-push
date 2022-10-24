@@ -463,7 +463,7 @@ class PushPlugin : CordovaPlugin() {
 
         val token = try {
           try {
-            Tasks.await(FirebaseMessaging.getInstance().token)
+            Tasks.await(FirebaseMessaging.getInstance().getToken())
           } catch (e: ExecutionException) {
             throw e.cause ?: e
           }
